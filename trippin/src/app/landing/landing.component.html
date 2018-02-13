@@ -1,0 +1,20 @@
+<div class="wrapper">
+<app-header class="head"></app-header>
+<app-globalmap class="map"></app-globalmap>
+<div class="details">
+  <div class="link">
+    <h4>Welcome to TripPin!</h4>
+    <p>Share your travel experiences:<p>
+    <ul class="text-left margl">
+      <li>By location</li>
+      <li>With important details</li>
+    </ul>
+    <p>Your reviews help other travellers!</p>
+  </div>
+  <div class="link spacer">
+  <a [routerLink]="['../review/create']">Create a Trip Review</a>
+  </div>
+</div>
+<app-list class="list"></app-list>
+<app-footer class="foot"></app-footer>
+</div>

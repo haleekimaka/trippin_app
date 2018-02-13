@@ -1,0 +1,22 @@
+<div class="wrapper">
+<app-header class="head"></app-header>
+<div class="query">
+  <p *ngIf="query">Your <span class="errors">"{{query.type}}"</span> query: <span class="errors">"{{query.content}}"</span><br>found <span *ngIf="results_set">{{results_set.length}}</span><span *ngIf="!results_set">0</span> results</p>
+  <p class="errors" *ngIf="!query">Search Request Invalid.<br>Please enter both a search query and select a type.</p>
+</div>
+<div class="results">
+  <ul *ngIf="query.type != 'username'">
+    <li *ngFor="let result of results_set">
+      <a (click)="showReview(result._id)">{{result.title}}</a>
+      <p class="inline"> -- {{result.location_info}}</p>
+    </li>
+  </ul>
+  <ul *ngIf="query.type == 'username'">
+    <li *ngFor="let result of results_set">
+      <a (click)="showUser(result._id)">{{result.username}}</a>
+      <p class="inline"> -- Written Reviews: {{result.written_reviews.length}}</p>
+    </li>
+  </ul>
+</div>
+<app-footer class="foot"></app-footer>
+</div>

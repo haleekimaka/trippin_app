@@ -1,0 +1,20 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  grid-template-rows: 5rem;
+  background: #e2dfe4
+}
+
+.foot{
+    text-align: center;
+    height: 100%;
+    grid-column: 2 / 3;
+    text-align: center;
+    margin: auto 0;
+    padding: 0.5em;
+    display: inline-block;
+}
+.tiny {
+    color: #4f5052;
+    font-size: .8em;
+}

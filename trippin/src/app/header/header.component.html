@@ -1,0 +1,25 @@
+<div class="wrapper">
+    <div class="logo">
+      <p class="purple">TripPin</p>
+    </div>
+    <div class="left_links">
+      <a (click)="gotoLanding()">Home</a>
+    </div>
+    <div class="right_links">
+      <a (click)="gotoProfile()">Profile</a>
+      <a (click)="logout()">Logout</a>
+    </div>
+  <div class="search">
+    <form (submit)="onSubmit(formData)" #formData='ngForm'>
+      <label for="query">Search: </label>
+      <input class="roundy" type="text" name="query"[(ngModel)]="search_query">
+      <input class="margl" type="radio" name="kind" id="kind1" value="location" [(ngModel)]="query_kind">
+      <label for="kind1">Location <em>(City, State, or Country)</em></label>
+      <input class="margl" type="radio" name="kind" id="kind2" value="title" [(ngModel)]="query_kind">
+      <label for="kind2">Review Title</label>
+      <input class="margl" type="radio" name="kind" id="kind3" value="username" [(ngModel)]="query_kind">
+      <label for="kind3">Username</label>
+      <input id="submit" type="submit" value="Submit">
+    </form>
+  </div>
+</div>

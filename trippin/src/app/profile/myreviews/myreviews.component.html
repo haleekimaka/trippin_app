@@ -1,0 +1,7 @@
+<h4 class="head" *ngIf="user[0]['_id'] != logged_user._id"><span class="teal">{{user[0].username}}'s</span> Reviews</h4>
+<h4 class="head" *ngIf="user[0]['_id'] == logged_user._id"><span class="teal">{{logged_user.username}}'s</span> Reviews</h4>
+<div class="scroll">
+  <div *ngFor="let review of user_reviews">
+      <a (click)="showReview(review._id)" class="link">{{review.title}}</a><br><span>{{review.location_info}} </span>
+  </div>
+</div>

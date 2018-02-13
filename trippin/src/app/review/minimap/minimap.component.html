@@ -1,0 +1,20 @@
+<div class="top row">
+    <form class="margt">
+        <input (click)="zoom('nam')" type="radio" name="region">
+        <label>North America</label>
+        <input (click)="zoom('cam')" type="radio" name="region">
+        <label>Central America</label>
+        <input (click)="zoom('latam')" type="radio" name="region">
+        <label>South America</label>
+        <input (click)="zoom('eur')" type="radio" name="region">
+        <label>Europe</label>
+        <input (click)="zoom('afr')" type="radio" name="region">
+        <label>Africa</label>
+        <input (click)="zoom('asia')"type="radio" name="region">
+        <label>Asia</label>
+        <input (click)="zoom('spaf')"type="radio" name="region">
+        <label>South Pacific</label>
+    </form>
+</div>
+<div id="mini"></div>
+<p class="guide">Click to Drop marker, Click again to Reset marker</p>

@@ -1,0 +1,45 @@
+<div class="wrapper">
+  <form (submit)="onSubmit(formData)" #formData='ngForm'>
+    <div class="row rowy">
+      <label for="title">Review Title:</label>
+      <input type="text" name="title" required minlength="3" [(ngModel)]="editReview.title" #title='ngModel' placeholder={{review.title}}>
+    </div>
+    <div class="form-group  row rowy">
+      <label for="location">Location:</label>
+      <p class="aligned">{{review.location_info}}</p>
+    </div>
+    <div class="form-group  row rowy">
+      <label for="length">Trip Length:</label>
+      <input type="text" name="length" required minlength="1" [(ngModel)]="editReview.length" #length='ngModel'>
+      <p class="aligned"> days</p>
+    </div>
+    <label>Who should take this trip?</label>
+    <div class="form-group row rowy">
+      <input type="checkbox" id="couples" name="couples" [(ngModel)]="editReview.couples" value="couples">
+      <label for="couples">Couples</label>
+      <input type="checkbox" id="families" name="families" [(ngModel)]="editReview.families" value="families">
+      <label for="families">Families</label>
+      <input type="checkbox" id="solos" name="solos" [(ngModel)]="editReview.solos" value="solos">
+      <label for="solos">Solo Travellers</label>
+    </div>
+    <label>Top 2 Activities
+      <em>(Things to see or do)</em>
+    </label>
+    <div class="form-group  row rowy">
+      <label for="act_1">Activity #1:</label>
+      <input type="text" name="act_1" required minlength="3" [(ngModel)]="editReview.activity1" #activity1='ngModel'>
+    </div>
+    <div class="form-group  row rowy">
+      <label for="act_2">Activity #2:</label>
+      <input type="text" name="act_2" [(ngModel)]="editReview.activity2" #activity2='ngModel'>
+    </div>
+    <label for="tips">Tips, Pointers, Recommendations...</label>
+    <br>
+    <textarea name="tips" cols="40" maxlength="200" required minlength="3" maxlength="200" [(ngModel)]="editReview.tips" #tips='ngModel'></textarea>
+    <div class="row rowy">
+      <input [disabled]="!formData.valid" id="submit" type="submit" value="Save Changes">
+      <a id="back" (click)="gotoReview()">Cancel</a>
+    </div>
+  </form>
+
+</div>

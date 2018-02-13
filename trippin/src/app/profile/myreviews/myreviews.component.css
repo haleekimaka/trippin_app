@@ -1,0 +1,19 @@
+.link {
+    font-weight: bold;
+}
+.scroll {
+    vertical-align: middle;
+    background: white;
+    height: 16rem;
+    padding: 1em;
+    overflow: scroll;
+}
+
+.head {
+    text-shadow: 2px 2px 4px #a7a7a7;
+    text-align: center;
+}
+
+.teal {
+    color:#3b9990;
+}

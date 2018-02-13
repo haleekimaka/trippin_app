@@ -1,0 +1,31 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 20rem;
+}
+.martop{
+  margin-top: 0px;
+}
+.left {
+    height: 100%;
+    grid-column: 1 / 3;
+    text-align: justify;
+    margin: auto 0;
+    padding: 2rem;
+    display: inline-block;
+}
+.right {
+  height: 100%;
+  grid-column: 3 / 5;
+  text-align: justify;
+  margin: auto 0;
+  padding: 2rem;
+  display: inline-block;
+}
+
+.inline {
+  display: inline !important;
+    font-size: 0.8em;
+
+}
+

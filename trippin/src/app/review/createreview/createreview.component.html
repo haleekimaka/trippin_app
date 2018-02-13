@@ -1,0 +1,41 @@
+<div class="wrapper">
+  <form (submit)="onSubmit(formData)" #formData='ngForm'>
+    <div class="row rowy">
+      <label for="title">Review Title:</label>
+      <input type="text" name="title" required minlength="3" [(ngModel)]="newReview.title" #title='ngModel'>
+    </div>
+        <div class="form-group  row rowy">
+          <label for="location">Location:</label>
+          <p class="aligned">{{current_location.city}}, {{current_location.state}}, {{current_location.country}}</p>
+        </div>
+    <div class="form-group  row rowy">
+      <label for="length">Trip Length:</label>
+      <input type="text" name="length" required minlength="1" [(ngModel)]="newReview.length" #length='ngModel' ><p class="aligned"> days</p>
+    </div>
+      <label>Who should take this trip?</label>
+      <div class="form-group row rowy">
+        <input type="checkbox" id="couples" name="couples" [(ngModel)]="newReview.couples" value="couples">
+        <label for="couples">Couples</label>
+        <input type="checkbox" id="families" name="families" [(ngModel)]="newReview.families" value="families">
+        <label for="families">Families</label>
+        <input type="checkbox" id="solos" name="solos" [(ngModel)]="newReview.solos" value="solos">
+        <label for="solos">Solo Travellers</label>
+      </div>
+    <label>Top 2 Activities <em>(Things to see or do)</em></label>
+      <div class="form-group  row rowy">
+        <label for="act_1">Activity #1:</label>
+        <input type="text" name="act_1" required minlength="3" [(ngModel)]="newReview.activity1" #activity1='ngModel'>
+      </div>
+      <div class="form-group  row rowy">
+        <label for="act_2">Activity #2:</label>
+        <input type="text" name="act_2" [(ngModel)]="newReview.activity2" #activity2='ngModel'>
+      </div>
+      <label for="tips">Tips, Pointers, Recommendations...</label><br>
+      <textarea name="tips" cols="40" maxlength="200" required minlength="3" maxlength="200" [(ngModel)]="newReview.tips" #tips='ngModel'></textarea>
+      <div class="row rowy">
+        <input [disabled]="!formData.valid" id="submit" type="submit" value="Create Review">
+        <a id="back" (click)="gotoProfile()">Cancel</a>
+      </div>
+  </form>
+
+</div>

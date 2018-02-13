@@ -1,0 +1,6 @@
+<h4 class="head">Follows</h4>
+<div class="scroll">
+  <div *ngFor="let user of current_user[0].follows">
+      <a (click)="showUser(user._id)" class="link">{{user.username}}</a><span> -- Written reviews: {{user.written_reviews}}</span>
+  </div>
+</div>

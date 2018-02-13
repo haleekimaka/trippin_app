@@ -1,0 +1,32 @@
+<div class="wrapper">
+  <div class="head">
+    <p class="title">TripPin</p>
+    <p class="big">Create a personal travel map. Share your travel experiences.</p><br>
+    <p class="bigy">Login or Register your free profile.</p>
+  </div>
+    <div class="left">
+      <h3>Login</h3>
+      <form (submit)="login()" #formData1="ngForm">
+        <div class=" form-group row">
+        <label for="login">Username:</label>
+        <input type="text" name="login" [(ngModel)]="existing.username" required minlength="1" #text="ngModel">
+        <input [disabled]="!formData1.valid" class="submit" type="submit" value="Login">
+        </div>
+      </form>
+      <div *ngIf="!text.valid && text.touched" class="errors">Entry required</div>
+      <div id="error_log" class="errors"></div>
+    </div>
+    <div class="right">
+      <h3>Register</h3>
+      <form (submit)="register()" #formData="ngForm">
+        <div class=" form-group row">
+          <label for="register">New Username:</label>
+          <input type="text" name="register" [(ngModel)]="new_user.username" required minlength="5" #test="ngModel">
+          <input [disabled]="!formData.valid" class="submit" type="submit" value="Register">
+        </div>
+      </form>
+      <div *ngIf="!test.valid && test.touched" class="errors">Usernames must be at least 5 characters</div>
+      <div id="error_reg" class="errors"></div>
+    </div>
+  <app-footer class="foot"></app-footer>
+</div>

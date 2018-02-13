@@ -1,0 +1,35 @@
+<div class="wrapper">
+  <div class="display">
+    <div class="text-center">
+      <p class="title">{{review.title}}</p>
+      <p>{{review.location_info}}</p> 
+      <p>Written By: <span (click)="showUser(review._user._id)" class="teal">{{review._user.username}}</span> Likes: {{review.likes}}</p>
+        <div *ngIf="!same_user" class="likes">
+          <form class="rowy" (submit)="likeReview(review._id)">
+            <input type="submit" value="Like Review 👍">
+          </form>
+        </div>
+    </div><br>
+    <div>
+     <p class="inline"><span class="bolder">Good for:</span></p> <p class="inline" *ngFor="let type of review.kind; let i = index;">{{type}}, </p>
+    </div>
+    <p>
+      <span class="bolder">Top Activities:</span>
+    </p>
+    <ul>
+      <li>{{review.activity1}}</li>
+      <li>{{review.activity2}}</li>
+    </ul>
+    <p>
+      <span class="bolder">Tips:</span>
+      <br>{{review.tips}}
+    </p>
+  </div>
+
+  <div class="link">
+    <a [routerLink]="['../../landing']">Go Home</a>
+    <a *ngIf="!same_user" (click)="reviewPlace(review._location.coords)">Review this Place</a>
+    <!-- <a id="edit" *ngIf="same_user" (click)="editReview(review._id)">Edit</a> -->
+    <a id="delete" *ngIf="same_user" (click)="removeReview(review._id)">Delete</a>
+  </div>
+</div>

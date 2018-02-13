@@ -1,0 +1,15 @@
+<div class="wrapper">
+<app-header class="head"></app-header>
+<app-myreviews class="left"></app-myreviews>
+<app-likedreviews class="right"></app-likedreviews>
+<app-mymap class="map"></app-mymap>
+<div class="stats">
+  <div *ngIf="!same_user && !follows" class="button"><a (click)="followUser(current_user)">Follow this User</a></div>
+  <div *ngIf="!same_user && follows" class="button"><a (click)="unfollowUser(current_user)">Unfollow this User</a></div>  
+  <p><span class="bold">Reviews Written: </span><span *ngIf="current_user != 'undefined'">{{current_user[0]['written_reviews'].length}}</span></p>
+  <p><span class="bold">Followers: </span><span *ngIf="current_user != 'undefined'">{{current_user[0]['followed_by'].length}}</span></p>
+  <p><span class="bold">Contributing Since: </span><span *ngIf="current_user != 'undefined'">{{current_user[0]['createdAt'] | date:'MMMM y'}}</span></p>
+  <div class="button"><a (click)="createReview()">Create a New Review</a></div>
+</div>
+<app-footer class="foot"></app-footer>
+</div>
